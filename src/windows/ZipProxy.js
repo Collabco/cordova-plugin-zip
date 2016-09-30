@@ -4,7 +4,7 @@ var cordova = require('cordova'),
 module.exports = {
 
     unzip: function (successCallback, errorCallback, strInput) {
-        var doesitwork = Unzipper.Unzipper.unzip(strInput[1], strInput[0]).then(
+        var doesitwork = Unzipper.Unzipper.unzip(strInput[0], strInput[1]).then(
             function (result) {
                 console.log('complete');
                 successCallback('success :-)');
