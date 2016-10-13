@@ -90,9 +90,9 @@ namespace Unzipper
                     zipFile = await StorageFile.GetFileFromPathAsync(zipfilepath);
                 }
 
-                System.Diagnostics.Debug.WriteLine("3: " + zipFile.Path);
+                //System.Diagnostics.Debug.WriteLine("3: " + zipFile.Path);
                 Stream zipStream = await zipFile.OpenStreamForReadAsync();
-                System.Diagnostics.Debug.WriteLine("4");
+                //System.Diagnostics.Debug.WriteLine("4");
 
 
 
@@ -236,7 +236,7 @@ namespace Unzipper
             }
 
             uri = uri.Replace("ms-appdata:///", "");
-            System.Diagnostics.Debug.WriteLine("URI 1: " + uri);
+            //System.Diagnostics.Debug.WriteLine("URI 1: " + uri);
 
 
            string area = uri.Split('/')[0];
@@ -254,7 +254,7 @@ namespace Unzipper
                 default:
                     throw new Exception("Unknown Location");
             }
-            System.Diagnostics.Debug.WriteLine("PATH 1: " + path);
+            //System.Diagnostics.Debug.WriteLine("PATH 1: " + path);
 
             //trim off the area
             int index = uri.IndexOf('/');
@@ -262,11 +262,11 @@ namespace Unzipper
 
             uri = uri.Replace('/','\\');
 
-            System.Diagnostics.Debug.WriteLine("URI 2: " + uri);
+            //System.Diagnostics.Debug.WriteLine("URI 2: " + uri);
 
             //add any path after area:
             path = path + uri;
-            System.Diagnostics.Debug.WriteLine("PATH 2: " + path);
+            //System.Diagnostics.Debug.WriteLine("PATH 2: " + path);
 
             return await StorageFolder.GetFolderFromPathAsync(path);
         }

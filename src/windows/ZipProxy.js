@@ -6,15 +6,15 @@ module.exports = {
     unzip: function (successCallback, errorCallback, strInput) {
         var doesitwork = Unzipper.Unzipper.unzip(strInput[0], strInput[1]).then(
             function (result) {
-                console.log('complete');
+                //console.log('complete');
                 successCallback('success :-)');
             },
             function (err) {
-                console.log('error');
+                //console.log('error');
                 errorCallback('error :-(');
             },
             function (prog) {
-                console.log('PROG{ loaded: ' + prog.loaded + ' total: ' + prog.total + '}');
+                //console.log('PROG{ loaded: ' + prog.loaded + ' total: ' + prog.total + '}');
                 successCallback({ loaded: prog.loaded, total: prog.total }, { keepCallback: true});
             }
             );

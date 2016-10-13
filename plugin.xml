@@ -29,7 +29,7 @@
     <js-module src="src/windows/ZipProxy.js" name="ZipProxy">
       <merges target="" />
     </js-module>
-	<framework src="src/windows/Unzipper.winmd" custom="true"/>
+	<framework src="src/windows/Unzipper/Unzipper/Unzipper.csproj" type="projectReference" custom="true"/>
   </platform>
 
   <platform name="ios">
